@@ -36,11 +36,11 @@ class ModelArgs:
 class TrainingArgs:
     epochs: int = 1e1
     learning_rate: float = 1e-3
-    learning_rate_scheduler_gamma: float = 0.999
+    sc_gamma: float = 0.999
     use_mixed_precision: bool = True
     device: torch.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     save_model_path: str = r'models/tf_ts_chkpt_1.pt'
-    load_model_path: str = r'models/tf_ts_chkpt_1.pt'
+    load_model_path: str = r'models/tf_ts_chkpt_1.pt' # None on the first run
 
 
 class TimeSeriesModel(nn.Module):
@@ -176,7 +176,7 @@ def main():
         ModelArgs.num_blocks
         )
     model.to(TrainingArgs.device)
-    #diagnose_model(model, ModelArgs.batch_size, ModelArgs.seq_len, 'cpu')
+    #diagnose_model(model, ModelArgs.batch_size, ModelArgs.seq_len, TrainingArgs.device)
     
     path = r'datasets\Microsoft_Stock.csv'
     df = pd.read_csv(path)
@@ -189,9 +189,9 @@ def main():
     loader = Loader()
     train_loader, val_loader, test_loader = loader(scaled_data, ModelArgs.batch_size, ModelArgs.seq_len)
     optimizer = torch.optim.AdamW(model.parameters(),TrainingArgs.learning_rate)
-    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.9999)
+    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=TrainingArgs.sc_gamma)
     
-    #train(model, optimizer, scheduler, train_loader, val_loader, ModelArgs, TrainingArgs)
+    train(model, optimizer, scheduler, train_loader, val_loader, ModelArgs, TrainingArgs)
     if TrainingArgs.load_model_path is not None:
         model,_,_ = load_checkpoint(model, optimizer, TrainingArgs.load_model_path, TrainingArgs.device)
 
