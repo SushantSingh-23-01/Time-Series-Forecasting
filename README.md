@@ -1,7 +1,7 @@
-**Overview:**
+<h2><b>Overview:</b></h2><br>
 This repository contains a comprehensive implementation of deep learning models for time series forecasting.
 
-**Current Model Architectures include:**
+<h3>Current Model Architectures include:</h3>
 <ol>
   <li> Temporal Convolutional Networks (TCN)</li>
   <li> Recurrent Neural networks (LSTMs& GRUs)</li>
