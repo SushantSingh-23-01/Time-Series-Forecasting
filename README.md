@@ -4,7 +4,7 @@ This repository contains a comprehensive implementation of deep learning models 
 **Current Model Architectures include:**
 <ol>
   <li> Temporal Convolutional Networks (TCN)</li>
-  <li>Long Short-Term Memory networks (LSTMs)</li>
+  <li> Recurrent Neural networks (LSTMs& GRUs)</li>
   <li> Transformers and attention mechanism based models.</li>
 </ol>
 <br><
