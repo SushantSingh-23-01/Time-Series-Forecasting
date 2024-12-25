@@ -4,3 +4,4 @@ pandas
 pytorch
 pytorch-cuda
 seaborn
+tqdm
