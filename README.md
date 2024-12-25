@@ -10,12 +10,10 @@ This project aims to explore various deep learning architectures used in time se
 3. To compare the results for different decoding techniques.
 
 ## Project Setup
-Prerequisites
-- Python 3.x
-- PyTorch
-- NumPy
-- Matplotlib
-- Pandas
+Install
+```bash
+pip install -r requirements.txt
+```
 
 ## Results and Analysis
 The results of each model on different forecasting techniques are documented in a separate Jupyter notebook or report, providing insights into the performance of various architectures.
