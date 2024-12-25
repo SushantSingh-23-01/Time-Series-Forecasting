@@ -1,12 +1,24 @@
-<h2><b>Overview:</b></h2><br>
-This repository contains a comprehensive implementation of deep learning models for time series forecasting.
+# Exploring Deep Learning Architectures in Time Series Forecasting
 
-<h3>Current Model Architectures include:</h3>
-<ol>
-  <li> Temporal Convolutional Networks (TCN)</li>
-  <li> Recurrent Neural networks (LSTMs& GRUs)</li>
-  <li> Transformers and attention mechanism based models.</li>
-</ol>
-<br>
-<b>The project doesn't aim at obtaining state of the art results but exploring various architectures available in literature.</b>
-<br><br>If you end up using files from this repository, a reference would be appreciated.
+## Overview
+
+This project aims to explore various deep learning architectures used in time series forecasting and benchmark their performance on the **Jenna climate** dataset.
+
+## Objectives
+1. To understand and implement different types of neural network architectures such as Temporal Convolutional Networks (TCN), Recurrent Neural Networks (RNN) based networks, and Transformers.
+2. To evaluate these models using the Jenna climate dataset.
+3. To compare the results for different decoding techniques.
+
+## Project Setup
+Prerequisites
+- Python 3.x
+- PyTorch
+- NumPy
+- Matplotlib
+- Pandas
+
+## Results and Analysis
+The results of each model on different forecasting techniques are documented in a separate Jupyter notebook or report, providing insights into the performance of various architectures.
+
+## Conclusion
+This project provides valuable insights into the effectiveness of different deep learning architectures for time series forecasting tasks. The code and results can be used as a reference for further research and development.
